@@ -1,6 +1,7 @@
-#include "en-tete/main.hpp"
-#include "en-tete/InputHandler.hpp"
-#include "en-tete/Player.hpp"
+#include "main.hpp"
+#include "Game/InputHandler.hpp"
+#include "Player/Player.hpp"
+#include "Enemy/chaser.hpp"
 
 using namespace sf;
 using namespace std;
@@ -13,7 +14,7 @@ int main()
     window.setFramerateLimit(60);
 
     Player joueur("Image/player_sprite.png", {400.f, 400.f});
-
+    Chaser chase("Image/enemy1_sprite.png", {100.f, 100.f});
 
     while (window.isOpen())
     {
@@ -27,6 +28,8 @@ int main()
 
         joueur.update(window);
         joueur.draw(window);
+        
+        chase.draw(window);
 
         window.display(); //affichage
     }

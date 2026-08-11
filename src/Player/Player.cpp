@@ -1,11 +1,12 @@
-#include <SFML/Graphics.hpp>
-#include "en-tete/Player.hpp"
-#include <iostream>
+#include "Player.hpp"
+
 
 Player::Player(const std::string& texturePath, sf::Vector2f startPosition)
     : texture(texturePath), sprite(texture)
 {
     vitesse = 10.f;
+    timerAttack.start();
+
 
     sprite.setPosition(startPosition);
 
@@ -24,7 +25,6 @@ Player::Player(const std::string& texturePath, sf::Vector2f startPosition)
 void Player::update(sf::RenderWindow& window)
 {
     sf::Vector2f deplacement{0.f, 0.f};
-    timerAttack.start();
 
     if (sf::Mouse::isButtonPressed(sf::Mouse::Button::Left) && timerAttack.getElapsedTime() >= sf::seconds(2.f)) 
     {

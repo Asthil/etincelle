@@ -1,4 +1,4 @@
-#include "en-tete/InputHandler.hpp"
+#include "InputHandler.hpp"
 
 void InputHandler(const sf::Event& event, sf::RenderWindow& window)
 {

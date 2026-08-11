@@ -9,7 +9,8 @@ find_package(SFML COMPONENTS System Window Graphics Audio REQUIRED)
 # Récupère automatiquement tous les fichiers .cpp du dossier src (et sous-dossiers)
 file(GLOB_RECURSE SOURCES CONFIGURE_DEPENDS "${CMAKE_SOURCE_DIR}/src/*.cpp")
 
-add_executable(etincelle ${SOURCES})
+add_executable(etincelle ${SOURCES}
+    src/Enemy/chaser.hpp)
 
 add_custom_command(TARGET etincelle POST_BUILD
     COMMAND ${CMAKE_COMMAND} -E copy_directory
