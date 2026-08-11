@@ -25,7 +25,7 @@ int main()
 
         window.clear(Color::Blue); //effacer l'écran
 
-        joueur.update();
+        joueur.update(window);
         joueur.draw(window);
 
         window.display(); //affichage
