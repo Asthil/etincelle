@@ -1,5 +1,6 @@
 #include "en-tete/main.hpp"
 #include "en-tete/InputHandler.hpp"
+#include "en-tete/Player.hpp"
 
 using namespace sf;
 using namespace std;
@@ -11,6 +12,9 @@ int main()
     //window.setVerticalSyncEnabled(true); vsync
     window.setFramerateLimit(60);
 
+    Player joueur("Image/player_sprite.png", {400.f, 400.f});
+
+
     while (window.isOpen())
     {
         while (const optional event = window.pollEvent())
@@ -21,12 +25,11 @@ int main()
 
         window.clear(Color::Blue); //effacer l'écran
 
-        sf::Texture texture_player("Image/player_sprite.png");
-        texture_player.setSmooth(true);
+        joueur.update();
+        joueur.draw(window);
 
-        Sprite sprite_player(texture_player);
-
-        window.draw(sprite_player);
         window.display(); //affichage
     }
 }
+
+// - 40 - 10
