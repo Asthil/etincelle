@@ -1,17 +1,27 @@
-#include <SFML/Graphics.hpp>
+#include "en-tete/main.hpp"
+#include "en-tete/InputHandler.hpp"
 
-int main() {
-    sf::RenderWindow window(sf::VideoMode({800, 600}), "Etincelle");
+using namespace sf;
+using namespace std;
 
-    while (window.isOpen()) {
-        while (const std::optional event = window.pollEvent()) {
-            if (event->is<sf::Event::Closed>())
-                window.close();
+int main()
+{
+    RenderWindow window(VideoMode({ WIN_WIDTH, WIN_HEIGHT }), "Titre");
+
+    //window.setVerticalSyncEnabled(true); vsync
+    window.setFramerateLimit(60);
+
+    while (window.isOpen())
+    {
+        while (const optional event = window.pollEvent())
+        {
+            //gestion des inputs / events
+            InputHandler(*event, window);
+            
         }
 
-        window.clear(sf::Color::Black);
-        window.display();
-    }
+        window.clear(); //effacer l'écran
 
-    return 0;
+        window.display(); //affichage
+    }
 }
