@@ -11,6 +11,12 @@ file(GLOB_RECURSE SOURCES CONFIGURE_DEPENDS "${CMAKE_SOURCE_DIR}/src/*.cpp")
 
 add_executable(etincelle ${SOURCES})
 
+add_custom_command(TARGET etincelle POST_BUILD
+    COMMAND ${CMAKE_COMMAND} -E copy_directory
+    ${CMAKE_SOURCE_DIR}/Image
+    $<TARGET_FILE_DIR:etincelle>/Image
+)
+
 target_include_directories(etincelle PRIVATE ${CMAKE_SOURCE_DIR}/src)
 
 target_link_libraries(etincelle PRIVATE

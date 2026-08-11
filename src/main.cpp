@@ -17,11 +17,16 @@ int main()
         {
             //gestion des inputs / events
             InputHandler(*event, window);
-            
         }
 
-        window.clear(); //effacer l'écran
+        window.clear(Color::Blue); //effacer l'écran
 
+        sf::Texture texture_player("Image/player_sprite.png");
+        texture_player.setSmooth(true);
+
+        Sprite sprite_player(texture_player);
+
+        window.draw(sprite_player);
         window.display(); //affichage
     }
 }
