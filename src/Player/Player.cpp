@@ -1,6 +1,6 @@
 #include "Player.hpp"
 
-
+//ceci est la classe joueur
 Player::Player(const std::string& texturePath, sf::Vector2f startPosition)
     : texture(texturePath), sprite(texture)
 {
