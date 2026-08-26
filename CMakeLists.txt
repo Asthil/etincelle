@@ -13,7 +13,9 @@ file(GLOB_RECURSE SOURCES CONFIGURE_DEPENDS
 
 add_executable(etincelle ${SOURCES}
     src/Game/Handler.hpp
-    src/Player/joueur.hpp)
+    src/Player/joueur.hpp
+    src/Enemy/Enemy.hpp
+    src/Enemy/Chaser.hpp)
 
 target_include_directories(etincelle PRIVATE
     ${CMAKE_SOURCE_DIR}/src

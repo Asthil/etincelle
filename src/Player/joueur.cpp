@@ -5,9 +5,10 @@ using namespace sf;
 
 
 
-joueur::joueur(float x, float y, float spe) 
+joueur::joueur(int v, float x, float y, float spe) 
     : texture("assets/player_sprite.png"), sprite(texture)
     {
+    vie = v;
     pos_x = x;
     pos_y = y;
     speed = spe;
@@ -38,3 +39,6 @@ void joueur::afficherJoueur(sf::RenderWindow& window)
 {
     window.draw(sprite);
 }
+
+int joueur::getXJoueur() {return pos_x;}
+int joueur::getYJoueur() {return pos_y;}
