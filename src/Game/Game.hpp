@@ -24,7 +24,6 @@ void Game() {
 
     while (window.isOpen()) {
 
-        j.Update();
 
         float elapsed = clock.restart().asSeconds();
         tempsAccumule += elapsed;
@@ -46,6 +45,7 @@ void Game() {
 
         window.clear(Color(50, 50, 50));
         
+        j.Update(window);
 
 
         j.afficherJoueur(window);

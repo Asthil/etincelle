@@ -37,7 +37,7 @@ public:
             pos_y -= speed * elapsed;
         }
 
-        sprite.setPosition(Vector2f(pos_x, pos_y));
+        sprite.setPosition(sf::Vector2f(pos_x, pos_y));
 
     }
 
