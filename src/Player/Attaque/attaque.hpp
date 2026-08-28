@@ -14,11 +14,12 @@ private:
     sf::Texture textureAttaque;
     sf::Sprite spriteAttaque;
     sf::Clock clockCd;
+    sf::RenderWindow& window;
 
 
 public:
-    Attaque(float speed, joueur jou);
-    void creationSprite();
+    Attaque(float speed, joueur& jou, sf::RenderWindow& win);
+    void creationSprite(sf::RenderWindow& window);
     void mouvementAttaque();
 
 };

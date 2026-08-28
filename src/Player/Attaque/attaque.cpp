@@ -1,5 +1,18 @@
 #include "attaque.hpp"
 
-Attaque::Attaque(int spe, joueur j) {
- // A faire demain
+Attaque::Attaque(float spe, joueur& j, sf::RenderWindow& window) 
+:   textureAttaque("assets/attaque.png"), 
+    spriteAttaque(textureAttaque),
+    pos_xAttaque(j.getXJoueur()),
+    pos_yAttaque(j.getYJoueur())
+{
+    Attaque::creationSprite(window);
+} 
+
+void Attaque::creationSprite(sf::RenderWindow& window) {
+    window.draw(spriteAttaque);
 }
+
+void Attaque::mouvementAttaque() {
+    float elapsed = clockCd.restart().asSeconds();
+} 
