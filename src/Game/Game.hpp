@@ -5,6 +5,7 @@
 
 #include "Handler.hpp"
 #include "Player/joueur.hpp"
+#include "Player/Attaque/attaque.hpp"
 #include "Enemy/Chaser.hpp"
 
 using namespace std;
@@ -46,6 +47,8 @@ void Game() {
         window.clear(Color(50, 50, 50));
         
         j.Update(window);
+
+        Attaque a(100, j, window, monstre);
 
 
         j.afficherJoueur(window);
