@@ -19,7 +19,7 @@ private:
     sf::Clock clockCd;
     sf::RenderWindow& win;
 
-    vector<Chaser> c;
+    vector<Chaser>& c;
 
 
 public:

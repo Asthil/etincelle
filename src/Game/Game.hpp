@@ -24,6 +24,9 @@ void Game() {
     vector<Chaser> monstre;
     monstre.reserve(51);
 
+    Attaque a(100.0f, j, window, monstre);
+
+
 
     while (window.isOpen()) {
 
@@ -57,12 +60,11 @@ void Game() {
             m.draw(window);
         }
 
-        Attaque a(100.0f, j, window, monstre);
         a.mouvementAttaque();
 
         a.creationSprite(window);
 
-        cout << monstre.size() << endl;
+
 
         window.display();
     }
