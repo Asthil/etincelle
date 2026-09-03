@@ -17,11 +17,13 @@ void Game() {
 
     joueur j(1000, 550, 550, 500);
 
+
     Clock clock;
     float tempsAccumule = 9.f;
 
     vector<Chaser> monstre;
     monstre.reserve(51);
+
 
     while (window.isOpen()) {
 
@@ -48,14 +50,19 @@ void Game() {
         
         j.Update(window);
 
-        Attaque a(100, j, window, monstre);
-
-
         j.afficherJoueur(window);
+
 
         for (auto& m : monstre) {
             m.draw(window);
         }
+
+        Attaque a(100.0f, j, window, monstre);
+        a.mouvementAttaque();
+
+        a.creationSprite(window);
+
+        cout << monstre.size() << endl;
 
         window.display();
     }
